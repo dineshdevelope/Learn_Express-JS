@@ -37,19 +37,12 @@ app.use(express.urlencoded({ extended: false }));
 //2.To get json data
 app.use(express.json());
 //3.To get public floder access
-app.use(express.static(path.join(__dirname, "./public")));
+app.use("/", express.static(path.join(__dirname, "./public")));
+app.use("/subdir", express.static(path.join(__dirname, "./public")));
 
-app.get("^/$|/index(.html)?", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "index.html"));
-});
-
-app.get("/newpage(.html)?", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "new-page.html"));
-});
-
-app.get("/oldpage(.html)?", (req, res) => {
-  res.redirect(301, "new-page.html");
-});
+//Routing
+app.use("/", require("./routes/root.js"));
+app.use("/subdir", require("./routes/subdir.js"));
 
 app.get(
   "/hello(.html)?",
