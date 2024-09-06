@@ -43,6 +43,7 @@ app.use("/subdir", express.static(path.join(__dirname, "./public")));
 //Routing
 app.use("/", require("./routes/root.js"));
 app.use("/subdir", require("./routes/subdir.js"));
+app.use("/employees", require("./routes/api/employees.js"));
 
 app.get(
   "/hello(.html)?",
