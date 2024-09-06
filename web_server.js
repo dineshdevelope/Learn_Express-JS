@@ -5,6 +5,7 @@ const errorHandler = require("./middleware/errorHandler.js");
 const app = express();
 const path = require("path");
 const cors = require("cors");
+const corsOptions = require("./config/corsOptions.js");
 const PORT = process.env.PORT || 3000;
 
 //Custom Middle Ware
@@ -13,22 +14,6 @@ app.use(logger);
 //Thired party Middele Ware
 //app.use(cors());
 
-//cors Origin Resource Sharing specific URL
-const whitelist = [
-  "https:google.com",
-  "http://127.0.0.1:5500",
-  "http://localhost:3500",
-];
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (whitelist.indexOf(origin !== -1) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not Allowed by CORS"));
-    }
-  },
-  optionSuccessStatus: 200,
-};
 app.use(cors(corsOptions));
 
 //Build in Middle Wares
