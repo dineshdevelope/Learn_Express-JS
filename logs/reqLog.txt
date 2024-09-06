@@ -132,3 +132,7 @@
 20240906	19:04:51	e39005ae-92f4-4f20-a3a5-d82376a1e9c4	POST 	 undefined  	  /employees
 20240906	19:05:13	fb9fceeb-6f1f-4a1d-afef-8da2f19953ba	POST 	 undefined  	  /employees
 20240906	19:09:45	6d6695cd-c819-4092-942e-36f8eebf29cf	POST 	 undefined  	  /employees
+20240906	20:24:42	bb4037d8-19be-4cb2-ae7e-bede70ecf693	GET 	 undefined  	  /employees
+20240906	20:25:01	cc7f92db-9700-4e61-9548-109c9a92dd42	POST 	 undefined  	  /employees
+20240906	20:27:18	b0d720b5-9663-4530-9375-3240194caa56	DELETE 	 undefined  	  /employees
+20240906	20:28:50	8cf7634f-8bdc-46df-b495-9dda460f3dd4	PUT 	 undefined  	  /employees
